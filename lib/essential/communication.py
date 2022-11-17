@@ -100,15 +100,16 @@ def mainLoop(lcd, sock):
         
         if enter.value() == 1:
             socketSend(text)
+
+            text = ""
+
             break
         
         if delete.value() == 1:
             text = text[:-1]
             
             lcd.clear()
-            lcd.putstr(text)
-            
-            text = "" 
+            lcd.putstr(text) 
 
 def ledMessageAlert(ledPin):
     for i in range(0, 5, 1):
